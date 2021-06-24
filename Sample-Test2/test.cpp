@@ -13,6 +13,7 @@ void setter(int n, char* hamstersPosition) {
             numberOfSittingHamster++;
     }
 }
+
 TEST(problemsolve424A14, test1) {
     n = 4;
     testHamstersPosition[0] = 'x';
@@ -28,6 +29,9 @@ TEST(problemsolve424A14, test1) {
     s.solve424A14(n, numberOfStandingHamster, testMinMinutes, numberOfSittingHamster,
         testHamstersPosition);
     ASSERT_EQ(minMinutes, testMinMinutes);
+}
+;
+TEST(problemsolve424A14, test2){
     for (int i = 0; i < n; i++)
-        ASSERT_EQ(hamstersPosition[i], testHamstersPosition[i]); 
+        EXPECT_EQ(hamstersPosition[i], testHamstersPosition[i]); 
 }
