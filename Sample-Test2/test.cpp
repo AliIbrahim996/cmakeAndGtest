@@ -8,7 +8,7 @@ char* testHamstersPosition = new char[n];
 void setter() {
     for (int i = 0; i < n; i++) {
         if (hamstersPosition[i] == 'X')
-            numberOfStandingHamster++;s
+            numberOfStandingHamster++;
         else
             numberOfSittingHamster++;
     }
