@@ -10,3 +10,17 @@ TEST_F(SolverTest, test1) {
     ASSERT_EQ(1, s.solve424A14(testHamstersPosition));
     ASSERT_EQ(hamstersPosition, testHamstersPosition);
 };
+
+TEST_F(SolverTest, test2) {
+    testHamstersPosition = "XX";
+    hamstersPosition = "xX";
+    ASSERT_EQ(1, s.solve424A14(testHamstersPosition));
+    ASSERT_EQ(hamstersPosition, testHamstersPosition);
+};
+
+TEST_F(SolverTest, test3) {
+    testHamstersPosition = "xXXxXx";
+    hamstersPosition = "xXXxXx";
+    ASSERT_EQ(0, s.solve424A14(testHamstersPosition));
+    ASSERT_EQ(hamstersPosition, testHamstersPosition);
+};
