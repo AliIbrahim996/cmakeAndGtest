@@ -5,10 +5,10 @@ numberOfSittingHamster = 0;
 char* hamstersPosition = new char[n];
 char* testHamstersPosition = new char[n];
 
-void setter(int n, char* hamstersPosition) {
+void setter() {
     for (int i = 0; i < n; i++) {
         if (hamstersPosition[i] == 'X')
-            numberOfStandingHamster++;
+            numberOfStandingHamster++;s
         else
             numberOfSittingHamster++;
     }
@@ -25,7 +25,7 @@ void setter(int n, char* hamstersPosition) {
 }
 
 TEST(problemsolve424A14, test1) {
-    setter(n, testHamstersPosition);
+    setter();
     s.solve424A14(n, numberOfStandingHamster, testMinMinutes, numberOfSittingHamster,
         testHamstersPosition);
     ASSERT_EQ(minMinutes, testMinMinutes);
