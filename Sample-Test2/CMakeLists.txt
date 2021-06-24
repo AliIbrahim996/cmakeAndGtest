@@ -1,6 +1,7 @@
 project(SampleTest)
 
 include_directories("../Problem")
+
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -15,7 +16,6 @@ enable_testing()
 add_executable(SampleTest test.cpp)
 
 target_link_libraries(SampleTest solve-lib gtest_main)
-
 
 include(GoogleTest)
 gtest_discover_tests(SampleTest)
