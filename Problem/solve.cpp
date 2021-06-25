@@ -1,9 +1,10 @@
 #include "solve.h"
 
-int Solver::solve424A14(std::string &hamstersPosition) {
+std::pair<int,std::string> Solver::solve424A14(const std::string &hamstersPosition) {
     int numberOfStandingHamster = 0,
         numberOfSittingHamster = 0,
         localMin , minMinutes = 0,size = hamstersPosition.length();
+    std::string hamstersPositionLocal =  hamstersPosition;
     for (int i = 0; i < size; i++) {
       if (hamstersPosition[i] == 'X')
           numberOfStandingHamster++;
@@ -15,7 +16,7 @@ int Solver::solve424A14(std::string &hamstersPosition) {
     localMin = minMinutes;
     for (int i = 0; i < size && localMin > 0; i++)
       if (hamstersPosition[i] == 'x') {
-        hamstersPosition[i] = 'X';
+        hamstersPositionLocal[i] = 'X';
         localMin--;
       }
   } else if (numberOfSittingHamster < size / 2) {
@@ -23,9 +24,10 @@ int Solver::solve424A14(std::string &hamstersPosition) {
     localMin = minMinutes;
     for (int i = 0; i < size && localMin > 0; i++)
       if (hamstersPosition[i] == 'X') {
-        hamstersPosition[i] = 'x';
+        hamstersPositionLocal[i] = 'x';
         localMin--;
       }
   }
-  return minMinutes;
+  std::pair<int,std::string> p(minMinutes,hamstersPositionLocal);
+  return p;
 }
